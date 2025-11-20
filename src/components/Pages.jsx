@@ -88,7 +88,7 @@ export function CalculatorPage() {
   }
 
   const [estimate, setEstimate] = React.useState(null)
-  const calc = async ()n  => {
+  const calc = async () => {
     try {
       const res = await fetch(`${backend}/api/estimate`, {
         method: 'POST',
