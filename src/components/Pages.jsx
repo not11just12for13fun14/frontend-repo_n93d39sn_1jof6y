@@ -360,3 +360,23 @@ function Card({ title, subtitle }) {
     </div>
   )
 }
+
+function Tier({ name, priceNote, points, accent = 'from-cyan-400 to-indigo-500' }) {
+  return (
+    <div className="relative overflow-hidden p-6 rounded-2xl bg-white/5 border border-white/10 mt-6">
+      <div className={`absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-20 bg-gradient-to-br ${accent}`} />
+      <div className="relative">
+        <div className="text-white text-2xl font-bold">{name}</div>
+        <div className="text-slate-300 text-sm">{priceNote}</div>
+        <ul className="mt-4 space-y-2 text-slate-200 text-sm">
+          {points.map((p) => (
+            <li key={p} className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-cyan-400" />
+              {p}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
